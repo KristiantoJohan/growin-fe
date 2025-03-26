@@ -38,12 +38,12 @@ const data = {
   menu: [
     {
       title: "Dashboard",
-      url: "#",
+      url: "/dashboard",
       icon: CircleGauge
     },
     {
       title: "Projects",
-      url: "#",
+      url: "/projects",
       icon: FolderGit2
     },
     {

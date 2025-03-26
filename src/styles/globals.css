@@ -93,3 +93,12 @@
     @apply bg-background text-foreground;
   }
 }
+
+html, body {
+  overflow: hidden;
+}
+
+/* Aktifkan scroll hanya untuk komponen tertentu */
+.scroll-container {
+  overflow: auto;
+}

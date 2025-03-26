@@ -36,16 +36,16 @@ const chartConfig = {
   },
 } satisfies ChartConfig
 
-export function LineChart() {
+export function ProductManagementChart() {
   return (
-    <Card>
+    <Card className="h-full flex flex-col">
       <CardHeader>
         <CardTitle>Product Management</CardTitle>
         <CardDescription>
           Visualizing comprehensive annual income and expenses for the last 6 month
         </CardDescription>
       </CardHeader>
-      <CardContent>
+      <CardContent className="flex-1">
         <ChartContainer config={chartConfig}>
           <AreaChart
             accessibilityLayer
@@ -54,6 +54,7 @@ export function LineChart() {
               left: 12,
               right: 12,
             }}
+            className="h-[300]"
           >
             <CartesianGrid vertical={false} />
             <XAxis

@@ -2,8 +2,10 @@ import { AppSidebar } from "@/components/layout/app-sidebar";
 import PageContainer from "@/components/layout/page-containter";
 import { DashboardCard } from "@/components/section/dashboard-card";
 import { DatePickerWithRange } from "@/components/section/date-range";
-import { LineChart } from "@/components/section/pm-line-chart";
-import { RadialChart } from "@/components/section/pm-radial-chart";
+import { BestSellerProductChart } from "@/components/section/public-bestSellerProduct-chart";
+import { ProductManagementChart } from "@/components/section/public-productManagement-chart";
+import { ProjectionsChart } from "@/components/section/public-projections-chart";
+import { TeamActivites } from "@/components/section/public-teamActivities";
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
@@ -11,12 +13,13 @@ import { SidebarInset, SidebarProvider, SidebarTrigger } from "@/components/ui/s
 import { 
   Download,
   DollarSign,
-  Percent,
-  Banknote,
-  Truck
+  UsersRound,
+  Package,
+  Smile
 } from "lucide-react";
 
 export default function Page() {
+    
     return (
         <SidebarProvider>
             <AppSidebar/>
@@ -25,7 +28,7 @@ export default function Page() {
                 <div className="flex items-center gap-2 px-4 w-full">
                     <SidebarTrigger className="-ml-1" />
                     <Separator orientation="vertical" className="mr-2 h-4" />
-                    <Breadcrumb>
+                    <Breadcrumb className="hidden md:block">
                     <BreadcrumbList>
                         <BreadcrumbItem className="hidden md:block">
                         <BreadcrumbLink href="#">
@@ -39,7 +42,7 @@ export default function Page() {
                     </BreadcrumbList>
                     </Breadcrumb>
                     
-                    <div className="ml-auto flex items-center gap-4">     
+                    <div className="ml-auto flex items-center gap-4 md:gap-4">     
                         <DatePickerWithRange/>                   
                         <Button className="h-8 bg-blue-950"> 
                             <Download />
@@ -56,39 +59,47 @@ export default function Page() {
                         </h2>
                     </div>
                     <div className='grid gap-4 md:grid-cols-2 lg:grid-cols-4'>
-                        <DashboardCard 
+                        <DashboardCard
                             title="Revenue"
                             value="$45,231.89"
                             desc="+20.1% from last month"
                             icon={DollarSign}>                        
                         </DashboardCard>
                         <DashboardCard 
-                            title="Sales"
-                            value="+12,234"
-                            desc="+19% from last month"
-                            icon={Percent}>                        
+                            title="Products"
+                            value="150"
+                            desc="+10 products from last month"
+                            icon={Package}>                        
                         </DashboardCard>
                         <DashboardCard 
-                            title="Profit"
-                            value="$15,614.73"
-                            desc="+5.1% from last month"
-                            icon={Banknote}>                        
+                            title="Active User"
+                            value="54,788"
+                            desc="+15.1% from last month"
+                            icon={UsersRound}>                        
                         </DashboardCard>
                         <DashboardCard 
-                            title="Distributions"
-                            value="+18,571"
-                            desc="+10.0% from last month"
-                            icon={Truck}>                        
+                            title="Satisfaction"
+                            value="4.7"
+                            desc="Customer satisfaction (CSAT): 4.7/5"
+                            icon={Smile}>                        
                         </DashboardCard>
                     </div>
                     <div className='grid grid-cols-1 gap-4 md:grid-cols-2'>
-                    <div>
-                      <LineChart />
+                        <div className="h-full">
+                            <ProductManagementChart />
+                        </div>
+                        <div className="h-full">
+                            <ProjectionsChart />
+                        </div>
                     </div>
-                    <div>
-                      <RadialChart />
+                    <div className='grid grid-cols-1 gap-4 md:grid-cols-2'>
+                        <div className="h-full">
+                            <BestSellerProductChart />
+                        </div>
+                        <div className="h-full">
+                            <TeamActivites />
+                        </div>
                     </div>
-                  </div>
                 </div> 
             </PageContainer>
             </SidebarInset>
