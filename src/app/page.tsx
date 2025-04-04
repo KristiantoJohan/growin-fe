@@ -1,3 +1,9 @@
+import ProductPositioningChart from "@/components/section/product-positioning-chart";
+
 export default function Home() {
-    return <h1> Welcome Home </h1>
+    return (
+        <div>
+            <ProductPositioningChart />
+        </div>
+    )
 }

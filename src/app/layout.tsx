@@ -1,11 +1,18 @@
 import "../styles/globals.css";
-import { Inter } from 'next/font/google';
+import { Inter, Poppins } from 'next/font/google';
 
 // Konfigurasi Inter
 const inter = Inter({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-inter', // opsional untuk penggunaan dengan CSS variable
+});
+
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  display: 'swap',
+  variable: '--font-poppins',
 });
 
 export const metadata = {

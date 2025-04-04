@@ -9,11 +9,13 @@ import {
 
 export function DashboardCard({
     title,
+    unit,
     value,
     desc,
     icon: Icon
 }: {
     title: string,
+    unit: string,
     value: string,
     desc: string,
     icon: React.ElementType
@@ -27,7 +29,7 @@ export function DashboardCard({
                 {Icon && <Icon className="h-4 w-4 text-muted-foreground" />}
             </CardHeader>
             <CardContent>
-                <div className='text-2xl font-bold'> {value}</div>
+                <div className='text-2xl font-bold'> {unit}{value}</div>
                 <p className='text-xs text-muted-foreground'>
                     {desc}
                 </p>

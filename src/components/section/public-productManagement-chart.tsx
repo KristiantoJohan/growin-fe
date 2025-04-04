@@ -1,6 +1,6 @@
 "use client"
 
-import { Area, AreaChart, CartesianGrid, XAxis } from "recharts"
+import { Area, AreaChart, CartesianGrid, Line, LineChart, XAxis } from "recharts"
 
 import {
   Card,
@@ -40,14 +40,14 @@ export function ProductManagementChart() {
   return (
     <Card className="h-full flex flex-col">
       <CardHeader>
-        <CardTitle>Product Management</CardTitle>
+        <CardTitle>Finance Monitoring</CardTitle>
         <CardDescription>
           Visualizing comprehensive annual income and expenses for the last 6 month
         </CardDescription>
       </CardHeader>
       <CardContent className="flex-1">
         <ChartContainer config={chartConfig}>
-          <AreaChart
+          <LineChart
             accessibilityLayer
             data={chartData}
             margin={{
@@ -91,23 +91,23 @@ export function ProductManagementChart() {
                 />
               </linearGradient>
             </defs>
-            <Area
+            <Line
               dataKey="expense"
               type="natural"
               fill="url(#fillexpense)"
               fillOpacity={0.4}
               stroke="var(--color-expense)"
-              stackId="a"
+              dot={false}
             />         
-            <Area
+            <Line
               dataKey="income"
               type="natural"
               fill="url(#fillincome)"
               fillOpacity={0.4}
               stroke="var(--color-income)"
-              stackId="a"
+              dot={false}
             />               
-          </AreaChart>
+          </LineChart>
         </ChartContainer>
       </CardContent>      
     </Card>

@@ -42,9 +42,9 @@ export default function Page() {
                     </BreadcrumbList>
                     </Breadcrumb>
                     
-                    <div className="ml-auto flex items-center gap-4 md:gap-4">     
+                    <div className="ml-auto flex items-center gap-4 md:gap-6">
                         <DatePickerWithRange/>                   
-                        <Button className="h-8 bg-blue-950"> 
+                        <Button className="hidden md:flex h-8 bg-blue-950 "> 
                             <Download />
                             Download 
                         </Button>
@@ -52,33 +52,37 @@ export default function Page() {
                 </div>
             </header>
             <PageContainer>
-                <div className='flex flex-1 flex-col space-y-2'>
-                    <div className='flex items-center justify-between space-y-2'>
-                        <h2 className='text-2xl font-bold tracking-tight'>
+                <div className='flex flex-1 flex-col space-y-2 pb-4'>
+                    <div className='flex items-center justify-between space-y-2 pb-3'>
+                        <h2 className='text-2xl font-bold tracking-wide'>
                             Overview
                         </h2>
                     </div>
                     <div className='grid gap-4 md:grid-cols-2 lg:grid-cols-4'>
                         <DashboardCard
                             title="Revenue"
-                            value="$45,231.89"
+                            unit="$"
+                            value="45,231.89"
                             desc="+20.1% from last month"
                             icon={DollarSign}>                        
                         </DashboardCard>
                         <DashboardCard 
                             title="Products"
+                            unit=""
                             value="150"
                             desc="+10 products from last month"
                             icon={Package}>                        
                         </DashboardCard>
                         <DashboardCard 
                             title="Active User"
+                            unit=""
                             value="54,788"
                             desc="+15.1% from last month"
                             icon={UsersRound}>                        
                         </DashboardCard>
                         <DashboardCard 
                             title="Satisfaction"
+                            unit=""
                             value="4.7"
                             desc="Customer satisfaction (CSAT): 4.7/5"
                             icon={Smile}>                        

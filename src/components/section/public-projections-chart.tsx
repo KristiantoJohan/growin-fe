@@ -1,6 +1,6 @@
-"use client"
+"use client";
 
-import { Pie, PieChart } from "recharts";
+import { Pie, PieChart, ResponsiveContainer } from "recharts";
 import { 
     Card, 
     CardContent,
@@ -51,23 +51,25 @@ export function ProjectionsChart() {
         <CardTitle>Projections</CardTitle>
         <CardDescription>Breaks down next quarter&#39;s budget</CardDescription>
       </CardHeader>
-      <CardContent className="flex-1 pb-0">
-        <ChartContainer
-          config={chartConfig}
-          className="mx-auto aspect-square max-h-[300px]"
-        >
-          <PieChart className="h-[300]">
-            <Pie 
-              data={projectionsData} 
-              dataKey="target"
-              nameKey="projection"
-            />
-            <ChartLegend
-              content={<ChartLegendContent nameKey="projection" />}
-              className="-translate-y-2 grid grid-cols-2 gap-x-10 gap-y-2 [&>*]:flex [&>*]:items-center [&>*]:gap-2 [&>*]:min-w-[200px]"
-            />
-          </PieChart>
-        </ChartContainer>
+      <CardContent className="flex-1 relative">
+        <div className="absolute inset-0 flex items-center justify-center pb-3">
+          <ChartContainer
+            config={chartConfig}
+            className="h-full w-full max-w-[300px] aspect-square"
+          >
+            <PieChart className="h-full w-full">
+                <Pie 
+                  data={projectionsData} 
+                  dataKey="target"
+                  nameKey="projection"
+                />
+                <ChartLegend
+                  content={<ChartLegendContent nameKey="projection" />}
+                  className="-translate-y-2 grid grid-cols-2 gap-x-10 gap-y-2 [&>*]:flex [&>*]:items-center [&>*]:gap-2 [&>*]:min-w-[200px]"
+                />
+              </PieChart>            
+          </ChartContainer>
+        </div>        
       </CardContent>
     </Card>
   )

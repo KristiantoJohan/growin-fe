@@ -36,7 +36,7 @@ export function ProjectsExploreCard({
                 />  
                 <div className="absolute -inset-1 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">                
                     <div className="absolute top-3 right-3">
-                        <Button className="bg-white text-blue-950 p-2 rounded-lg hover:bg-gray-300 transition-colors ">
+                        <Button className=" bg-background/80 text-black p-2 rounded-full transition-colors border-none hover:bg-background">
                             <TrashIcon className="h-24 w-24" /> {/* Ganti dengan ikon trash Anda */}
                         </Button>
                     </div>
